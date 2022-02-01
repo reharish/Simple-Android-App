@@ -25,10 +25,10 @@ jobs:
       
     - name: Build with Gradle
       run: ./gradlew assembleDebug
-	  run: ls -la *
-
+    - name: listing files
+      run: ls -la *
     - name: Artifacts
-      run: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: Apk
         Path: app/build/**/*.apk
