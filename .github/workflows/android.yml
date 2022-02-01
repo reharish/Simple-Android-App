@@ -25,3 +25,11 @@ jobs:
       
     - name: Build with Gradle
       run: ./gradlew assembleDebug
+	  run: ls -la *
+
+    - name: Artifacts
+      run: actions/upload-artifact@v2
+      with:
+        name: Apk
+        Path: app/build/**/*.apk
+        retention-days: 5
